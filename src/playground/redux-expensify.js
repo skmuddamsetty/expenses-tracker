@@ -30,7 +30,7 @@ const editExpense = (id, updates) => ({
   id,
   updates
 });
-// REMOVE_EXPENSE
+
 // SET_TEXT_FILTER Action Generator
 const setTextFilter = (text = '') => ({
   type: 'SET_TEXT_FILTER',
