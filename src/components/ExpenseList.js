@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ExpenseListItem from './ExpenseListItem';
+import { getVisibleExpenses } from '../selectors/expenses';
 
 const ExpenseList = props => (
   <div>
     <h1>Expenses List</h1>
-    {props.expenses.length}
+    {props.expenses.map(expense => {
+      return <ExpenseListItem {...expense} key={expense.id} />;
+    })}
   </div>
 );
 // const ConnectedExpenseList = connect(state => {
@@ -24,7 +28,7 @@ const ExpenseList = props => (
 // this is seperating the params that are being sent to the connect function
 const mapStateToProps = state => {
   return {
-    expenses: state.expenses
+    expenses: getVisibleExpenses(state.expenses, state.filters)
   };
 };
 
