@@ -1,7 +1,7 @@
 // FILTERS REDUCER
 const filtersReducerDefaultState = {
   text: '',
-  sortBy: 'amount',
+  sortBy: 'date',
   startDate: undefined,
   endDate: undefined
 };
